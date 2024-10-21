@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { Icon } from "@iconify/react";
+import ThreeRenderer from "../../renderers/ThreeRenderer";
 
 export default function HomePage() {
   const arrowDown = useRef(null);
@@ -53,30 +54,33 @@ export default function HomePage() {
   });
 
   return (
-    <section className="relative">
-      <div>
-        <h1 className="heading flex gap-[1rem] text-accent">
-          <em className="flex">
-            <div ref={theG} className="text-primary">
-              G
-            </div>
-            SAP
-          </em>
-          <span>WORKSHOP</span>
-        </h1>
-        <p className="flex justify-end paragraph text-end w-full pr-[1rem]">
-          by Sam Dacara
-        </p>
-      </div>
-      <div className="scroll absolute bottom-[3rem] text-accent flex justify-center items-center gap-[0.25rem]">
-        <p>Scroll Down</p>
-        <div ref={arrowDown}>
-          <Icon
-            icon="jam:chevrons-down"
-            className="inline-block text-primary text-[1rem] md:text-[2rem]"
-          />
+    <>
+      <ThreeRenderer />
+      <section className="relative">
+        <div>
+          <h1 className="heading flex gap-[1rem] text-accent">
+            <em className="flex">
+              <div ref={theG} className="text-primary">
+                G
+              </div>
+              SAP
+            </em>
+            <span>WORKSHOP</span>
+          </h1>
+          <p className="flex justify-end paragraph text-end w-full pr-[1rem]">
+            by Sam Dacara
+          </p>
         </div>
-      </div>
-    </section>
+        <div className="scroll absolute bottom-[3rem] text-accent flex justify-center items-center gap-[0.25rem]">
+          <p>Scroll Down</p>
+          <div ref={arrowDown}>
+            <Icon
+              icon="jam:chevrons-down"
+              className="inline-block text-primary text-[1rem] md:text-[2rem]"
+            />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

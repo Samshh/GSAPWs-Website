@@ -14,8 +14,12 @@
     flex-direction: column;
   }
 
+  body {
+    @apply antialiased;
+  }
+
   main {
-    @apply overflow-x-hidden;
+    @apply overflow-x-hidden relative;
   }
 
   section {

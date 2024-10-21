@@ -22,9 +22,15 @@ export default function App() {
         <rect width="100%" height="100%" filter="url(#noise)" opacity="0.05" />
       </svg>
       <ReactLenis root>
-        <HeroPage />
-        <IntroductionPage />
-        <PrereqPage />
+        <div className="relative">
+          <HeroPage />
+        </div>
+        <div>
+          <IntroductionPage />
+        </div>
+        <div>
+          <PrereqPage />
+        </div>
       </ReactLenis>
     </main>
   );
