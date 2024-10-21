@@ -16,6 +16,7 @@
     "ace-builds": "^1.36.2",
     "autoprefixer": "^10.4.20",
     "gsap": "^3.12.5",
+    "gsap-workshop": "file:",
     "postcss": "^8.4.47",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
