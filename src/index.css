@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  #root {
+    font-family: "Nunito", sans-serif;
+    background-color: #161616;
+    color: #bbbaa6;
+    flex-direction: column;
+  }
+
+  main {
+    @apply overflow-x-hidden;
+  }
+
+  section {
+    @apply flex flex-col items-center justify-center h-screen py-[3rem] px-[1rem] max-w-[1280px] mx-auto select-none;
+  }
+
+  h1 {
+    @apply text-[2rem] md:text-[3rem] font-black;
+    line-height: 1.3;
+  }
+
+  h2 {
+    @apply text-[1rem] md:text-[2rem];
+    line-height: 1;
+  }
+
+  p {
+    @apply text-[0.5rem] md:text-[1rem];
+    line-height: 1.5;
+  }
+
+  li {
+    @apply text-[1rem] md:text-[2rem];
+    line-height: 1.5;
+  }
+
+  button {
+    @apply flex items-center justify-center gap-[0.5rem];
+  }
+
+}
+
+:root {
+  --color-primary: #0ae448;
+  --color-accent: #fffce1; 
+}
