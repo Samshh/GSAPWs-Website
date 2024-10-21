@@ -2,18 +2,19 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import useButtomToLeft from "../../animations/useBottomToLeft";
+import useButtomToRight from "../../animations/useBottomToRight";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function IntroductionPage() {
   const mesRef = useButtomToLeft({ trigger: ".introTrigger", delay: 0.5 });
+  const webRef = useButtomToRight({ trigger: ".introTrigger", delay: 0.5 });
 
   const greenRef = useRef(null);
   const sockRef = useRef(null);
   const animationRef = useRef(null);
   const platformRef = useRef(null);
-  const webflowRef = useRef(null);
 
   useGSAP(() => {
     gsap.from(greenRef.current, {
@@ -68,19 +69,6 @@ export default function IntroductionPage() {
         toggleActions: "play none none reverse",
       },
     });
-    gsap.from(webflowRef.current, {
-      duration: 1,
-      opacity: 0,
-      y: -10,
-      ease: "power3.out",
-      delay: 1.2,
-      scrollTrigger: {
-        trigger: ".introTrigger",
-        start: "top center",
-        end: "bottom center",
-        toggleActions: "play none none reverse",
-      },
-    });
   });
 
   return (
@@ -99,16 +87,17 @@ export default function IntroductionPage() {
           <h1 ref={platformRef}>
             P<span className="text-secondary">LATFORM</span>
           </h1>
-          <p ref={webflowRef}>by Webflow</p>
         </div>
-        <div
-          ref={mesRef}
-          className="flex flex-col justify-end items-end text-end"
-        >
-          <p className="text-primary">What is GSAP?</p>
-          <h2>
-            A JavaScript Library <br /> made for building animations
-          </h2>
+        <div className="flex flex-row-reverse justify-between">
+          <div ref={mesRef} className="text-end">
+            <p className="text-primary">What is GSAP?</p>
+            <h2>
+              A JavaScript Library <br /> made for building animations
+            </h2>
+          </div>
+          <div ref={webRef} className="text-start flex justify-start items-start">
+            <h2>Created by Webflow</h2>
+          </div>
         </div>
       </div>
     </section>
