@@ -2,6 +2,7 @@ import HeroPage from "./pages/hero";
 import IntroductionPage from "./pages/introduction";
 import PrereqPage from "./pages/prereq";
 import { ReactLenis } from "@studio-freight/react-lenis";
+import FooterPage from "./pages/footer";
 
 export default function App() {
   return (
@@ -30,6 +31,9 @@ export default function App() {
         </div>
         <div>
           <PrereqPage />
+        </div>
+        <div>
+          <FooterPage />
         </div>
       </ReactLenis>
     </main>
