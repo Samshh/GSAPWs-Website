@@ -2,22 +2,12 @@ import { Icon } from "@iconify/react";
 import useButtomToRight from "../../animations/useBottomToRight";
 import useButtomToLeft from "../../animations/useBottomToLeft";
 import useHover from "../../animations/useHover";
+import CodeBlock from "../../components/ui/code";
 
 export default function PrereqPage() {
   const reqRef = useButtomToRight({ trigger: ".reqTrigger" });
   const mesRef = useButtomToLeft({ trigger: ".reqTrigger" });
   useHover();
-
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        alert(`${text} copied to clipboard!`);
-      })
-      .catch((err) => {
-        console.error("Could not copy text: ", err);
-      });
-  };
 
   const requirements = [
     {
@@ -37,36 +27,15 @@ export default function PrereqPage() {
     },
   ];
 
-  const commands = [
-    {
-      command: "git clone https://github.com/Samshh/portfolio-2024",
-      display: "git clone demo-url",
-      icon: "solar:copy-outline",
-    },
-    {
-      command: "npm install",
-      display: "npm install",
-      icon: "solar:copy-outline",
-    },
-    {
-      command: "cd GSAPDemo",
-      display: "cd GSAPDemo",
-      icon: "solar:copy-outline",
-    },
-    {
-      command: "npm run dev",
-      display: "npm run dev",
-      icon: "solar:copy-outline",
-    },
-  ];
-
   return (
     <section className="reqTrigger">
       <div className="grid grid-cols-1 grid-rows-[2fr_1fr] md:grid-cols-[2fr_1fr] md:grid-rows-1 items-center justify-center w-full">
-        <div ref={reqRef} className="flex flex-col gap-[1rem]">
+        <div ref={reqRef} className="flex flex-col gap-[2rem]">
           <h1 className="text-primary">PLAYGROUND</h1>
           <ul>
-            <li className="text-accent">Requirements:</li>
+            <li>
+              <h2 className="text-accent font-black">Requirements</h2>
+            </li>
             {requirements.map((req, index) => (
               <li key={index}>
                 <a
@@ -83,21 +52,18 @@ export default function PrereqPage() {
               </li>
             ))}
           </ul>
-          <ul>
-            <li className="text-accent">Paste in terminal:</li>
-            {commands.map((cmd, index) => (
-              <li key={index}>
-                <button
-                  type="button"
-                  onClick={() => copyToClipboard(cmd.command)}
-                  className="hover"
-                >
-                  {cmd.display}
-                  <Icon icon={cmd.icon} className="inline-block" />
-                </button>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <h2 className="text-accent font-black">Terminal</h2>
+            <CodeBlock>
+              {`git clone https://github.com/Samshh/portfolio-2024
+
+npm install
+
+cd GSAPDemo
+
+npm run dev`}
+            </CodeBlock>
+          </div>
         </div>
         <div
           ref={mesRef}

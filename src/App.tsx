@@ -3,6 +3,7 @@ import IntroductionPage from "./pages/introduction";
 import PrereqPage from "./pages/prereq";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import FooterPage from "./pages/footer";
+import InstallationPage from "./pages/installation";
 
 export default function App() {
   return (
@@ -26,15 +27,10 @@ export default function App() {
         <div className="relative">
           <HeroPage />
         </div>
-        <div>
-          <IntroductionPage />
-        </div>
-        <div>
-          <PrereqPage />
-        </div>
-        <div>
-          <FooterPage />
-        </div>
+        <IntroductionPage />
+        <PrereqPage />
+        <InstallationPage />
+        <FooterPage />
       </ReactLenis>
     </main>
   );
