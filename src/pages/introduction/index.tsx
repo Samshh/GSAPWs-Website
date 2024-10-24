@@ -96,7 +96,7 @@ export default function IntroductionPage() {
             </h2>
           </div>
           <div ref={webRef} className="text-start flex justify-start items-start">
-            <h2>Created by Webflow</h2>
+            <h2>founded by <em>Jack Doyle</em></h2>
           </div>
         </div>
       </div>
