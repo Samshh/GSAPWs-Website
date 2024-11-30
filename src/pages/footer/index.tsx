@@ -51,7 +51,7 @@ export default function FooterPage() {
         <div className="flex flex-col justify-end items-end text-end h-full w-full">
           <p className="text-[#bbbaa6]">developed by</p>
           <a
-            href="https://www.samshh.me/"
+            href="https://samshh.me/"
             target="_blank"
             rel="noopener"
             title="dev"

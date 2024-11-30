@@ -6,16 +6,7 @@ interface CodeProps {
 export default function CodeBlock({ children, description }: CodeProps) {
   const handleCopy = () => {
     if (typeof children === "string") {
-      navigator.clipboard.writeText(children).then(
-        () => {
-          alert("Copied to clipboard");
-        },
-        (err) => {
-          console.error("Failed to copy text: ", err);
-        }
-      );
-    } else {
-      console.error("Children is not a string");
+      navigator.clipboard.writeText(children);
     }
   };
 

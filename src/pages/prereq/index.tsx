@@ -55,11 +55,11 @@ export default function PrereqPage() {
           <div>
             <h2 className="text-accent font-black">Terminal</h2>
             <CodeBlock>
-              {`git clone https://github.com/Samshh/portfolio-2024
+              {`git clone https://github.com/Samshh/GSAP-Demo.git
+
+cd GSAP-Demo
 
 npm install
-
-cd GSAPDemo
 
 npm run dev`}
             </CodeBlock>
