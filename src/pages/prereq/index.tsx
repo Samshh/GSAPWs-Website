@@ -1,13 +1,11 @@
 import { Icon } from "@iconify/react";
 import useButtomToRight from "../../animations/useBottomToRight";
 import useButtomToLeft from "../../animations/useBottomToLeft";
-import useHover from "../../animations/useHover";
 import CodeBlock from "../../components/ui/code";
 
 export default function PrereqPage() {
   const reqRef = useButtomToRight({ trigger: ".reqTrigger" });
   const mesRef = useButtomToLeft({ trigger: ".reqTrigger" });
-  useHover();
 
   const requirements = [
     {
@@ -45,7 +43,7 @@ export default function PrereqPage() {
                   title={`download ${req.name}`}
                   className="flex w-fit"
                 >
-                  <button type="button" className="hover">
+                  <button type="button" className="hover:pl-4 transition-all">
                     {req.name} <Icon icon={req.icon} className="inline-block" />
                   </button>
                 </a>
